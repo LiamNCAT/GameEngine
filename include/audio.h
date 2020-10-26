@@ -1,12 +1,15 @@
 #include <AL/al.h>
 #include <AL/alc.h>
-#include "include/events.h"
 
-void init();
-
-void loadAudio(char*);
-
-void playsfx(sfx, event);
-
-void destroy();
-
+class AudioManager{
+private:
+	unsigned int buffer;
+	unsigned int source;
+	
+public:
+	AudioManager();
+	~AudioManager();
+	void load(string);
+	void play();
+	void stop();
+}
