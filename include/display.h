@@ -1,6 +1,8 @@
-int start_display(int, int, char*);
-
-void update_buffer();
-
-void reset_size(int, int);
-
+class DisplayManager{
+private:
+	RenderWindow* ogreWindow;
+public:
+	void init(int, int, string);
+	void update();
+	void close();
+}

@@ -1,9 +1,16 @@
-typedef struct{
-	void* root;
-	TreeNode* left;
-	TreeNode* right;
-}TreeNode;
-
-TreeNode* insert(TreeNode*, void*);
-
-TreeNode* search(TreeNode*, void*);
+template <typename T>
+class BST{
+private:
+	struct Node{
+		T data;
+		TreeNode* left;
+		TreeNode* right;
+	}
+	Node* root;
+public:
+	BST();
+	void insert(T);
+	void search(T);
+	void delete(T);
+	bool empty();
+}
