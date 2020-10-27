@@ -3,14 +3,13 @@
 #include <string>
 using namespace Ogre;
 
-class DisplayManager:WindowEventListener, FrameListener{
+class DisplayManager{
 private:
 	Root* mRoot;
 	RenderWindow* mWindow;
-	SceneManager* mSceneMgr;
-	Camera* mCamera;
+	
 public:
-	void init(int, int, string);
+	SceneManager* init(int, int, string);
 	void update();
 	void close();
 }

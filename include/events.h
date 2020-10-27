@@ -1,3 +1,9 @@
+#include <OISEvents.h>
+#include <OISInputManager.h>
+#include <OISKeyboard.h>
+#include <OISMouse.h>
+
+using namespace OIS;
 
 typedef enum
 {
@@ -16,5 +22,10 @@ struct event{
 };
 
 class EventManager{
+private:
+	InputManager* mInputMgr;
+	Keyboard* mKeyboard;
+	Mouse* mMouse;
+public:
 	
 }

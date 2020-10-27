@@ -6,9 +6,13 @@
 #include <OgreSceneManager.h>
 #include <OgreRenderWindow.h>
 
-void DisplayManager::init(int width, int height, string title){
+SceneManager* DisplayManager::init(int width, int height, string title){
+	mWindow = mRoot->initialise(true, title);
 	
+	TextureManager::getSingleton().setDefaultNumMipmaps(5);
+	ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
 	
+	return mRoot->createSceneManager(ST_GENERIC);
 }
 
 void DisplayManager::close(){
@@ -16,8 +20,5 @@ void DisplayManager::close(){
 }
 
 DisplayManager::DisplayManager(){
-	// mRoot = new Root(0);
-	// mWindow = new RenderWindow(0);
-	// mSceneMgr = new SceneManager(0);
-	// mCamera = new Camera(0);
+	mRoot = new Root();
 }

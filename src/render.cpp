@@ -1,4 +1,4 @@
-#include <gl/gl.h>
-#include <gl/glu.h>
-#include <gl/glaux.h>
+#include <OgreEntity.h>
+#include <OgreCamera.h>
+#include <OgreViewport.h>
 #include <render.h>
