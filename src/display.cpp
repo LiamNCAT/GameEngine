@@ -1,8 +1,6 @@
 #include "display.h"
 
-#include <OgreEntity.h>
-#include <OgreCamera.h>
-#include <OgreViewport.h>
+
 #include <OgreSceneManager.h>
 #include <OgreRenderWindow.h>
 

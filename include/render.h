@@ -4,6 +4,7 @@ private:
 	Camera* mCamera;
 public:
 	RenderingManager(SceneManager*);
+	void init();
 	
 
 }
