@@ -1,18 +1,17 @@
-typedef struct
-{
-    void *buffer;     // data buffer
-    void *buffer_end; // end of data buffer
-    size_t capacity;  // maximum number of items in the buffer
-    size_t count;     // number of items in the buffer
-	size_t amt_of_mem; //amount of available memory in the buffer
-    void *head;       // pointer to head
-    void *tail;       // pointer to tail
-} buffer;
+#include<memory>
 
-buffer* init(int, int);
+using namespace std;
 
-bool push_back(buffer*);
-
-void* pop_off(buffer*, int);
-
-void clear(buffer*);
+template<typename T>
+class MemoryManager{
+private:
+	unique_ptr<T> buffer;
+	size_t head = 0;
+	size_t tail = 0;
+public:
+	MemoryManager();
+	void enqueue(T);
+	T dequeue();
+	bool empty();
+	bool full();
+}
