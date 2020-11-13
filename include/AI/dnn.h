@@ -7,8 +7,14 @@ private:
 		bool use_gpu;
 	}
 
-	Options ops;
+	Options* ops;
 	
 public:
-
+	DNN();
+	~DNN();
+	void init(int*);
+	void load_model(string);
+	void save_model(string);
+	void fit(double**);
+	int* predict(double**);
 }
