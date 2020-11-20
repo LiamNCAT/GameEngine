@@ -7,7 +7,6 @@ class DisplayManager{
 private:
 	Root* mRoot;
 	RenderWindow* mWindow;
-	
 public:
 	SceneManager* init(int, int, string);
 	void update();
