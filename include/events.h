@@ -5,27 +5,13 @@
 
 using namespace OIS;
 
-typedef enum
-{
-	ev_keydown,
-	ev_keyup,
-	ev_mouse,
-	ev_joystick,
-	ev_none
-} event_type;
-
-struct event{
-	event_type type;
-	int		data1;		// keys / mouse/joystick buttons
-    int		data2;		// mouse/joystick x move
-    int		data3;		// mouse/joystick y move
-};
-
 class EventManager{
 private:
-	InputManager* mInputMgr;
-	Keyboard* mKeyboard;
-	Mouse* mMouse;
+	InputManager* g_InputManager = nullptr;			   //Our Input System
+	Keyboard* g_kb = nullptr;			   //Keyboard Device
+	Mouse* g_m = nullptr;			   //Mouse Device
+	JoyStick* g_joys[4] = { nullptr, nullptr, nullptr, nullptr }; //This demo supports up to 4 controllers
+
 public:
 	
 }
