@@ -17,6 +17,6 @@ private:
 public:
 	RenderingManager(SceneManager*);
 	void init();
-	void updateCamera(int, int, int);
+	void updateCamera(bool, bool, int);
 	void blendTerrainMaps();
 }

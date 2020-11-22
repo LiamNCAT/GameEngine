@@ -1,12 +1,18 @@
 #include <OgreEntity.h>
 #include <OgreCamera.h>
 #include <OgreViewport.h>
+#include "OgrePageManager.h"
+#include "OgreTerrain.h"
+#include "OgreTerrainGroup.h"
+#include "OgreTerrainQuadTreeNode.h"
+#include "OgreTerrainMaterialGeneratorA.h"
+#include "OgreTerrainPaging.h"
 #include <render.h>
 
-#define TERRAIN_FILE_PREFIX 
-#define TERRAIN_FILE_SUFFIX
-#define TERRAIN_SIZE
-#define TERRAIN_WORLD_SIZE
+#define TERRAIN_FILE_PREFIX String("terrain")
+#define TERRAIN_FILE_SUFFIX String("dat")
+#define TERRAIN_WORLD_SIZE 12000.0f
+#define TERRAIN_SIZE 513
 
 using namespace Ogre;
 
@@ -51,10 +57,14 @@ void RenderManager::defineTerrain(int x, int y){
 	}	
 }
 
-void RenderManager::getTerrainImage(int x, int y, Image img){
+void RenderManager::getTerrainImage(bool flipX, bool flipY, Image img){
 	img.load("terrain.png", mTerrainGroup->getResourceGroup());
 	if (flipX)
 		img.flipAroundY();
 	if (flipY)
 		img.flipAroundX();
+}
+
+void RenderManager::blendTerrainMaps(){
+	
 }

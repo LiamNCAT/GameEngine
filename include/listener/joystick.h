@@ -1,3 +1,0 @@
-class JoystickHandler : public JoyStickListener{
-
-}
