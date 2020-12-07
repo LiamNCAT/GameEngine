@@ -8,19 +8,12 @@ virtual bool GameInputListener::keyPressed (const KeyboardEvent &evt){
 	
 }
 
-virtual bool GameInputListener::keyReleased (const KeyboardEvent &evt){
-	
-}
 
 virtual bool GameInputListener::mouseMoved (const MouseMotionEvent &evt){
 	
 }
 
 virtual bool GameInputListener::mousePressed (const MouseButtonEvent &evt){
-	
-}
-
-virtual bool GameInputListener::mouseReleased(const MouseButtonEvent &evt){
 	
 }
 
