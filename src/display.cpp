@@ -4,7 +4,7 @@
 #include <OgreSceneManager.h>
 #include <OgreRenderWindow.h>
 
-SceneManager* DisplayManager::init(int width, int height, string title){
+SceneManager* DisplayManager::init(string title){
 	mWindow = mRoot->initialise(true, title);
 	
 	TextureManager::getSingleton().setDefaultNumMipmaps(5);

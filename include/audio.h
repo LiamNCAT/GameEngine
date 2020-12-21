@@ -5,6 +5,8 @@ class AudioManager{
 private:
 	unsigned int buffer;
 	unsigned int source;
+	ALCdevice *device = nullptr;
+	ALCcontext *ctx = nullptr;
 	
 public:
 	AudioManager();

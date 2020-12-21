@@ -7,13 +7,15 @@ void GameApp::setup(){
 	
 	
 	dMan = new DisplayManager();
-	SceneManager* sMan = dMan->init(1600, 900, "");
+	SceneManager* sMan = dMan->init("HorrorGame");
 	
 	rMan = new RenderManager(sMan);
 	rMan->init();
+	
+	
 }
 
-GameApp::GameApp():ApplicationContext(""){
+GameApp::GameApp():ApplicationContext("HorrorGame"){
 }
 
 int main(){
