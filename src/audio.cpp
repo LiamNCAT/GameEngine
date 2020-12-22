@@ -7,6 +7,7 @@ AudioManager::AudioManager(){
 	device = alcOpenDevice(NULL);
 	ctx = alcCreateContext(device, NULL);
 	
+	audLog.open("../log/audio.log");
 }
 
 void AudioManager::load(string filename){
@@ -20,7 +21,7 @@ void AudioManager::load(string filename){
     sf_count_t num_frames;
     ALsizei num_bytes;
 	
-	sndfile = sf_open(filename.__cstr, SFM_READ, &sfinfo);
+	sndfile = sf_open(filename.c_str, SFM_READ, &sfinfo);
 	if(!sndfile){
 		//log the error
 	}
@@ -72,9 +73,11 @@ void AudioManager::load(string filename){
 }
 
 void AudioManager::play(){
-	
-	
-	
+	source = 0;
+    alGenSources(1, &source);
+    
+	alSourcei(source, AL_BUFFER, (ALint)buffer);
+	alSourcePlay(source);
 }
 
 void AudioManager::stop(){
@@ -82,6 +85,9 @@ void AudioManager::stop(){
 }
 
 AudioManager::~AudioManager(){
+	alcMakeContextCurrent(NULL);
 	alcDestroyContext(ctx);
     alcCloseDevice(device);
+	
+	audLog.close();
 }
